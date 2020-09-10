@@ -11,5 +11,6 @@
         <bean id="userDao" class = "com.itheima.dao.imp.UserDapImpl" scope = "prototype" init-method = "init" destroy-method="destroy"> </bean>
          <bean id = "userService" class="com.itheima.service.impl.UserServiceImpl" >
                  <property name="userDao" ref="userDao"></property>
+<!--                <property name="userDao1" ref = "userDao"></property>>-->
          </bean>
 </beans>
