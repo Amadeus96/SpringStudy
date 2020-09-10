@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
@@ -8,8 +9,14 @@
 <!--                <bean id="userDao" class = "com.itheima.factory.StaticFactory" factory-method="getUserDao"> </bean>-->
 <!--        <bean id = "factory" class="com.itheima.factory.DynamicFactory"></bean>-->
 <!--        <bean id = "userDao" factory-bean="factory" factory-method="getUserDao"/>-->
-        <bean id="userDao" class = "com.itheima.dao.imp.UserDapImpl" scope = "prototype" init-method = "init" destroy-method="destroy"> </bean>
-         <bean id = "userService" class="com.itheima.service.impl.UserServiceImpl" >
-                 <property name="userDao" ref="userDao"></property>
+        <bean id="userDao" class = "com.itheima.dao.imp.UserDaoImpl" scope = "prototype" init-method = "init" destroy-method="destroy" >
+            <property name="name" value = "张三"/>
+            <property name="age" value = "4"/>
+        </bean>
+         <bean id = "userService" class="com.itheima.service.impl.UserServiceImpl">
+             <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+<!--                 <property name="userDao" ref="userDao"></property>-->
          </bean>
+    <import resource="applicationContext-product.xml"></import>
+    <import resource="applicationContext-user.xml"></import>
 </beans>

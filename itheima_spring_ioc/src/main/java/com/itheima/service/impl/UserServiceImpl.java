@@ -8,9 +8,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class UserServiceImpl implements UserService {
     UserDao userDao;
 
-    public void setUserDao(UserDao userDao) {
+    public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
+    //    public void setUserDao(UserDao userDao) {
+//        this.userDao = userDao;
+//    }
 
     public void save(){
 //        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
