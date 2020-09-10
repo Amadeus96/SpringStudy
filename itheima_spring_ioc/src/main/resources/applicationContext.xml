@@ -4,6 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-        <bean id="userDao" class = "com.itheima.dao.imp.UserDapImpl" scope = "prototype"></bean>
-
+<!--        <bean id="userDao" class = "com.itheima.dao.imp.UserDapImpl" scope = "prototype" init-method = "init" destroy-method="destroy"> </bean>-->
+<!--                <bean id="userDao" class = "com.itheima.factory.StaticFactory" factory-method="getUserDao"> </bean>-->
+<!--        <bean id = "factory" class="com.itheima.factory.DynamicFactory"></bean>-->
+<!--        <bean id = "userDao" factory-bean="factory" factory-method="getUserDao"/>-->
+        <bean id="userDao" class = "com.itheima.dao.imp.UserDapImpl" scope = "prototype" init-method = "init" destroy-method="destroy"> </bean>
+         <bean id = "userService" class="com.itheima.service.impl.UserServiceImpl" >
+                 <property name="userDao" ref="userDao"></property>
+         </bean>
 </beans>
