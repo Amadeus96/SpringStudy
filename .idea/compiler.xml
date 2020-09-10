@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="itheima_spring_ioc_anno" />
         <module name="itheima_spring_ioc" />
         <module name="itheima_spring_aop" />
       </profile>
@@ -13,6 +14,7 @@
     <bytecodeTargetLevel>
       <module name="itheima_spring_aop" target="1.5" />
       <module name="itheima_spring_ioc" target="1.5" />
+      <module name="itheima_spring_ioc_anno" target="1.5" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
